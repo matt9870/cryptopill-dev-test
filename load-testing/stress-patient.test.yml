@@ -1,0 +1,145 @@
+# Stress testing - a type of load testing to determine the limits of the system
+
+# Purpose - to verify the stability adn reliability of the system under extreme conditiions
+
+#   running a stres to determine the following:
+#     --determine how your system will behave under extreme conditions
+#     --determine the max capacity of system in terms of users of throughput
+#     --determine the breaking point of system and its failure mode
+#     --determine whether system will recover without manual inervention after the stress test is over
+
+
+# To run load test with already configured setting
+# $artillery run stress-patient.test.yml
+
+# To run based on different environments
+# $artillery run -e {{environment-name}} stress-patient.test.yml
+
+# To print the http request that is being sent
+# $DEBUG=http:request artillery run my-script.yaml
+
+# To print the http response that is recieved
+# $DEBUG=http:response artillery run my-script.yaml
+
+config:
+    target: "http://localhost:3048"
+    http:
+        timeout: 5
+        pool: 10
+    phases:
+        - duration: 10
+          arrivalRate: 1
+          name: Warm up
+        - duration: 60
+          arrivalRate: 5
+          rampTo: 30
+          name: Ramp up load
+        - duration: 60
+          arrivalRate: 30
+          name: Sustained load
+    environments:
+        production:
+            target: "http://localhost:3048"
+            phases:
+              - duration: 10
+                arrivalRate: 1
+                name: Warm up
+              - duration: 60
+                arrivalRate: 5
+                rampTo: 30
+                name: Ramp up load
+              - duration: 60
+                arrivalRate: 30
+                name: Sustained load
+        staging:
+            target: "http://localhost:3048"
+            phases:
+              - duration: 10
+                arrivalRate: 1
+                name: Warm up
+              - duration: 60
+                arrivalRate: 5
+                rampTo: 30
+                name: Ramp up load
+              - duration: 60
+                arrivalRate: 30
+                name: Sustained load   
+        local:
+            target: "http://localhost:3048"
+            phases:
+              - duration: 10
+                arrivalRate: 1
+                name: Warm up
+              - duration: 60
+                arrivalRate: 5
+                rampTo: 30
+                name: Ramp up load
+              - duration: 60
+                arrivalRate: 30
+                name: Sustained load
+    variables:
+        user: "/user"
+        patient: "/patient"
+
+before:
+    flow:
+        - log: "Get auth token, testing on {{$environment}} environment"
+        - post:
+            url: "{{user}}/login"
+            json:
+                contact_number: "+919456782322"
+                password: "abcd@12345"
+            capture:
+                - json: "data.token"
+                  as: token
+
+scenarios:
+
+    # getting patient profile
+    - flow:
+        # - log: "running profile api"
+        - get: 
+            url: "{{patient}}/profile"
+            headers:    
+                authorization: "{{token}}"
+
+    # fetching doctors nearby
+    - flow:
+        # - log: "fetch nearby doctors api running"
+        - post: 
+            url: "{{patient}}/fetchNearByDoctors"
+            headers:    
+                authorization: "{{token}}"
+            json: 
+                latitude: 34.044348
+                longitude: 74.226691
+                searchRadius: 10000
+                sort_type: "experience"
+                sort: "asc"
+                limit: 10
+                offset: 0
+
+after: 
+    flow:
+        - log: "logging out"
+        - get:
+            url: "{{user}}/logout"
+ 
+
+
+    # - flow:
+    #     # - log: "booking appointment"
+    #     - post: 
+    #         url: "/bookAppointment"
+    #         headers:    
+    #             authorization: "{{token}}"
+    #         json: 
+    #             doctor_id: 43
+    #             workplace_id: 1
+    #             date: "2020-12-30"
+    #             start_time: "15:30"
+    #             end_time: "16:00"
+    #             schedule_id: 414
+    #             video_call: 0
+    #             audio_call: 0
+    #             physical_examination: 1            

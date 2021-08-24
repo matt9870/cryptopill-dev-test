@@ -1,0 +1,44 @@
+{
+	"APP": {
+		"BASE_URL": "APP_BASE_URL",
+		"SERVER": {
+			"BASEPATH": "APP_BASEPATH",
+			"HOST": "Production",
+			"PORT": "3000"
+		},
+		"MYSQL_CONFIG": {
+			"DATABASE": "",
+			"DIALECT": "",
+			"USERNAME": "",
+			"PASSWORD": ""
+		},
+		"EMAIL_CONFIG": {
+			"HOST": "",
+			"PORT": "",
+			"SECURE": false,
+			"USERNAME": "",
+			"PASSWORD": ""
+		},
+		"TWILIO_CONFIG": {
+			"MOBILE_NUMBER": "",
+			"ACCOUNT_SID": "",
+			"AUTH_TOKEN": "",
+			"RECORD_CALLBACK_HOST": ""
+		},
+		"JWT_SECRET": "",
+		"AES_SECRET": "",
+		"TWILIO_CHAT_SERVICE_SID":"",
+		"TWILIO_API_SECRET":"",
+		"ADMIN_DEFAULT_PASSWORD": "",
+		"PW_RESET_LINK": "",
+		"RESET_LINK_TIMEOUT": "",
+		"AWS_ACCESS_KEY": "",
+		"AWS_SECRETE_KEY": "",
+		"AWS_S3_BUCKET": "",
+		"AWS_FILE_UPLOAD_LINK": "",
+		"USER_VERIFICATION_LINK": "",
+		"EMAIL_VERIFICATION_LINK": "",
+		"APP_LINK":"",
+		"MIX_PANEL_TOKEN": ""
+	}
+}

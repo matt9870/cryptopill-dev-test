@@ -1,0 +1,20 @@
+export const enum AdminPermission {
+    "user_patient" = 2,
+    "user_doctor" = 3,
+    "user_pharmacist" = 4,
+    "user_lab" = 5,
+    "app_addresses" = 7,
+    "app_drug" = 8,
+    "app_allergies" = 9,
+    "app_specialities" = 10,
+    "app_lab_test" = 11,
+    "app_medical_convention" = 12,
+    "notification_patient" = 14,
+    "notification_doctor" = 15,
+    "notification_pharmacist" = 16,
+    "notification_lab" = 17,
+    "role_add" = 19,
+    "role_edit" = 20,
+    "role_delete" = 21,
+    "role_manage_admin" = 22
+}

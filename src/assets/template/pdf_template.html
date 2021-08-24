@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      .lr_container {
+        display: flex;
+        align-items: flex-start;
+      }
+      .left {
+        width: 50%;
+      }
+
+      .right {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .horizontalLine {
+        width: 100%;
+        height: 2px;
+        background: #000;
+        margin-bottom: 10px;
+        margin-top: 8px;
+      }
+      table {
+        width: 100%;
+      }
+
+      td {
+        border: 1px solid #000;
+        text-align: center;
+        padding: 8px;
+      }
+      .container {
+        padding: 0 14px;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-radius: 8px;
+      }
+
+      td {
+        border: 1px solid #000;
+      }
+      .container {
+        padding: 0 14px;
+      }
+
+      thead td {
+        text-align: center;
+        font-weight: 600;
+      }
+
+      ul {
+        margin-top: 0;
+      }
+
+      li:before {
+        content: "-";
+        position: absolute;
+        left: -15px;
+        top: -15%;
+      }
+
+      li {
+        position: relative;
+        list-style: none;
+      }
+      .drSignature {
+        font-family: "Kaushan Script", cursive;
+      }
+    </style>
+  </head>
+  <body>
+    {{#each pdfData}}
+    <div class="mainContainer">
+      <div class="container">
+        <div class="lr_container">
+          <div class="left">
+            <h3 class="wpName">{{this.workplaceData.workplace_name}}</h3>
+            <div class="address">
+              {{this.workplaceData.workplaceAddress}}
+            </div>
+          </div>
+          <div class="right">
+            <div class="drDetails">
+              {{this.doctorData.doctor_name}} <br />
+              {{this.doctorData.education}}<br />
+              {{this.doctorData.specialities}} <br />
+              Ph. {{this.doctorData.contact_number}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Horizontal Line -->
+      <div class="horizontalLine"></div>
+      <!-- Horizontal Line -->
+      <div class="container">
+        <div class="lr_container">
+          <div class="left">
+            <div><b> {{this.patientData.name}},</b> {{this.patientData.age}} Years, {{this.patientData.gender}}</div>
+          </div>
+          <div class="right">
+            <b style="margin-right: 13px"
+              >Booking ID - {{ this.prescriptionData.bookingId }}
+            </b>
+            Date - {{this.bookingData.date}}<br />
+            Time - {{this.bookingData.time}}
+          </div>
+        </div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine" style="width: 80%; margin: 20px auto"></div>
+        <!-- Horizontal Line -->
+        <table style="width: 80%; margin: 0 auto">
+          <thead>
+            <tr>
+              <td>Blood Preasure</td>
+              <td>Heart Rate (p.m.)</td>
+              <td>Height (c.m)</td>
+              <td>Weight (kg)</td>
+              <td>Temp (°F)</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {{prescriptionData.vitals.blood_pressure.sys}}/{{
+                prescriptionData.vitals.blood_pressure.dia }}
+              </td>
+              <td>{{this.prescriptionData.vitals.heart_rate}}</td>
+              <td>{{this.prescriptionData.vitals.height}}</td>
+              <td>{{this.prescriptionData.vitals.weight}}</td>
+              <td>{{this.prescriptionData.vitals.temp}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container" style="margin-top: 16px; margin-bottom: 37px">
+        <div style="font-size: 18px; font-weight: 600">Dignosis</div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        {{this.prescriptionData.diagnosis}}
+      </div>
+
+      <div class="container" style="margin-bottom: 18px">
+        <div style="font-size: 16px; font-weight: 600">
+          <span style="font-size: 21px"> RX </span>Medication
+        </div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        <table>
+          <thead>
+            <tr>
+              <td>Medicine</td>
+              <td>Strength</td>
+              <td>Frequency</td>
+              <td>Duration</td>
+              <td>Instruction</td>
+              <td>Administation</td>
+              <td style="width: 19%">Repeat After (0 for non-repeating)</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each this.prescriptionData.rxMedicine}}
+            <tr>
+              <td>{{this.medicine_name}}</td>
+              <td>{{this.strength}}</td>
+              <td>{{this.frequency}}</td>
+              <td>{{this.duration}}</td>
+              <td>{{this.instructions}}</td>
+              <td>{{this.method_of_use}}</td>
+              <td>{{this.repeat_after}} {{this.repeat_after_type}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container" style="margin-bottom: 42px">
+        <div style="font-size: 16px; font-weight: 600">
+          Immunisation Details
+        </div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        <table style="width: 80%; margin: 0 auto 32px">
+          <thead>
+            <tr>
+              <td>Medicine</td>
+              <td>Strength</td>
+              <td>Frequency</td>
+              <td>Duration</td>
+              <td>Administation</td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each this.prescriptionData.rxMedicine}}
+            {{#if this.immunisation}}
+            <tr>
+              <td>{{this.medicine_name}}</td>
+              <td>{{this.strength}}</td>
+              <td>{{this.frequency}}</td>
+              <td>{{this.duration}}</td>
+              <td>{{this.method_of_use}}</td>
+            </tr>
+            {{/if}}
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div style="font-weight: 600; font-size: 16px">
+          Proposed Lab Test (If any)
+        </div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        <ul>
+          {{#each this.prescriptionData.prescribedTest}}
+          <li>{{this.test_name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="container" style="margin-bottom: 24px">
+        <div style="font-weight: 600">Comments (If any)</div>
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+
+        <!-- Horizontal Line -->
+        <div>{{this.prescriptionData.comments}}</div>
+      </div>
+
+      <div class="container">
+        <div style="font-weight: 600">
+          Follow Up (When to follow up with the Doctor)
+        </div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        <div>
+          {{this.prescriptionData.followUpDuration}} {{
+          this.prescriptionData.followUpDurationType }}
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 18px">
+        <div style="font-weight: 600">Referral (If any)</div>
+        <!-- Horizontal Line -->
+        <div class="horizontalLine"></div>
+        <!-- Horizontal Line -->
+        <div>
+          {{#each this.prescriptionData.refferals}} 
+           {{this.referral_name}},&nbsp;
+           {{/each}}
+        </div>
+      </div>
+
+      <div class="container" style="margin-top: 22px">
+        <div class="lr_container">
+          <div class="left"></div>
+          <div class="right" style="text-align: center">
+            <div>
+              <span class="drSignature">{{this.doctorData.doctor_name}}</span><br />
+              License Number: <span>{{this.doctorData.registration_number}}</span>
+              <br />
+              Council: <span>{{this.doctorData.council_name}}</span>
+              <br />
+              Degrees : <span>{{this.doctorData.education}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </body>
+</html>

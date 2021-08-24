@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cryptopill-dev",
+  "private_key_id": "0e425e0516fcba4d4db3e3b6ccae9a05164bb7a3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCCGETzqvCpkRm4\nki4kR7qwMUCNByBD20ITPqfV+Ao2HijNae8VDObYEQuE/E+j9MdhFgtOyYmIKVgT\nw7Ncuq20bzSWjulNbzyeOQKPmP0qeMPTsxivN7zstL1yK4a+QBNx3e/JYu9gSfoh\npTqrcsEvyBbmNIOjNGIqoqnvwhBzcYfWfnP42Gj36hmGwIexsuWyEVPvhaWpTlzn\n6W2YG6Tj+a5d2ZRs418LagefyOcXsqYD9UnuqOz5wFuCKjSblVIxIFqVb39cVlOK\nziGqNip4Ix7VYqVvTSpn+IyrkQKE+RF2A1bQHED5fqZBKnOGPMjNWgUG6TqWAKQq\nn+ehacYFAgMBAAECggEAHOT/C4+//Cl6KQButygnUtLdn3UhuXCNcHDOHjwFKJfy\nQA1zSJ2g+ARxJoxTs/q9/dZDlLA2l8N3CIzC3amowxaf+4CqWMSIFixbYUF9mV1R\nQUfaB7C9iWVrXlxEhST+LKA6jeQnfp9vquFj8oh+V/p8+4xWYH1WAFo4nEPiG4Ge\ntI86rZ0mmAjN91CDQoq5QiZjqfFtx5GNno5GbEyNPN9xSeUv59TkM5B9PaxrJfxz\nWKIORAs6nHn5Y0MTjRqGpWR4+lrumOTfARO5zcNET+bVQweyFO1hDvhqzoAGaKkg\nog3uq1ramU6tNLsDUouaW7X7m7LY/u4NFmJ2iv+hgQKBgQC3qYAzl20Zfju8bzdP\niXdbLx2hd9rUB/aPQLysNNquegtbz6S1606fyq3UnQu9/Eitip4Um6YvBlGKJpI0\nduo0uGBPzyzBcpfxBQWQ/eHAGHvbLPBwxbnKbwwub3SkxwR6mpPWBESzqNiWZ399\nZcy3EksyLF//dz3wmP7XEBDveQKBgQC1VZ7xJxpVyS+hQg22KzkDEwhrDq/1j6Bz\n9MWJRje4RURkQomtqoKYsZAThtM8VyW1aY7NqcuKq/Kwe6or5atmotWY+GvPFM5/\nHtCaxvki6ed48yPRP5G40SZx85n+VjLlT4lg+dLN5H/1etVhhbBaM8VSJ+BzlEKY\nehH1Yyjr7QKBgHS2W0jtzp/nrzBlAKIjulyQyWSl1MLvOIj6W6uXfuxnlDZI8uPE\nX9d9pg+5qQ+XddwKfcCc1POHMWP4dOqwMs9D57hv8IISP2ojhdEI9V/sbzDuEvGn\nRRTWksgjfd2Et1zuREo5tirxfom9xa+7dGdWUcDVoD+o2AzAPRoQFKMJAoGBAJJv\nfldIOKAmQ+x5pxEBfpzY9edeiQJI5k490He22LBaX4yHnx87nxMn8S2Tp2oHBlCl\n2ciD4fcuPGIAu7+PTQcpYEyT8JveNZO6ksMrA24Kbf7ien40U71oSR+klSsq+Rbt\nUAecN3xFln/qnf6PM4bkX+ikg0FS7SStD2uWlClRAoGAPv1irI7tl86BNduSeuFo\nxQ8KiLZg7KUv+3OVbRycd207JfYAlR/GJdbiHIIuXiXKHaDj7rujz8ng8Gb+eo/b\ntMVT6XGcYJ0909ua4U8Iew+cpzM5eqv0jgDUkdR/J59vxbfEDYECcvxb88IHbPEY\nanhnzhdpH+gntqJtFdzDCwQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-c2pss@cryptopill-dev.iam.gserviceaccount.com",
+  "client_id": "100859384349807306593",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-c2pss%40cryptopill-dev.iam.gserviceaccount.com"
+}

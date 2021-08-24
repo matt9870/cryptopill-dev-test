@@ -1,0 +1,44 @@
+{
+	"APP": {
+		"BASE_URL": "APP_BASE_URL",
+		"SERVER": {
+			"BASEPATH": "APP_BASEPATH",
+			"HOST": "localhost",
+			"PORT": "3048"
+		},
+		"MYSQL_CONFIG": {
+			"DATABASE": "cryptopill_dev",
+			"DIALECT": "mysql",
+			"USERNAME": "lead_santosh",
+			"PASSWORD": "rKEUK?-bK2$B!n?T"
+		},
+		"EMAIL_CONFIG": {
+			"HOST": "smtp.gmail.com",
+			"PORT": 465,
+			"SECURE": true,
+			"USERNAME": "cryptopill20@gmail.com",
+			"PASSWORD": "@nuj_reg1s"
+		},
+		"TWILIO_CONFIG": {
+			"MOBILE_NUMBER": "+12407248708",
+			"ACCOUNT_SID": "ACb7593c19f772599170005d58f620bea6",
+			"AUTH_TOKEN": "1be62c8f6a0193a4001fe0879a242be7",
+			"RECORD_CALLBACK_HOST": "http://180.149.241.208"
+		},
+		"JWT_SECRET": "secretForJwtToken",
+		"AES_SECRET": "secreteforAesEncryption",
+		"TWILIO_CHAT_SERVICE_SID":"IS624faaa22c174023ad0f0156773f0f6e",
+		"TWILIO_API_SECRET":"ixvrHtBn3SVksao8L9EelOyVoZ7zL8WG",
+		"ADMIN_DEFAULT_PASSWORD": "Cryptopill12345",
+		"PW_RESET_LINK": "http://180.149.241.208:3049/reset-password?resetToken=",
+		"RESET_LINK_TIMEOUT": "5h",
+		"AWS_ACCESS_KEY": "AKIAYBAKGK6HXGBGMCNZ",
+		"AWS_SECRETE_KEY": "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",
+		"AWS_S3_BUCKET": "cryptopillapp",
+		"AWS_FILE_UPLOAD_LINK": "https://cryptopillapp.s3.amazonaws.com",
+		"USER_VERIFICATION_LINK": "http://180.149.241.208:3045/employee-otp-verify",
+		"EMAIL_VERIFICATION_LINK": "http://180.149.241.208:3049/email-verify?token=",
+		"APP_LINK":"http://180.149.241.208:3045",
+		"MIX_PANEL_TOKEN": "f0f55052f8ae0cf3be7252206879b42c"
+	}
+}
