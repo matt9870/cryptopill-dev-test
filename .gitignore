@@ -3,3 +3,4 @@ dist
 logs
 package-lock.json
 src/assets/pdf
+config

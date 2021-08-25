@@ -11,6 +11,7 @@ import { AdminUrlPreRequestMiddleware } from "./middlewares/adminurlaccess.middl
 import { Utils } from "./helpers/Utils";
 import Users from "./models/users.model";
 require("./cronScript");
+
 const swaggerUi = require("swagger-ui-express");
 
 // for dependacy injection
